@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Alerts</h2>
+
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>ID</th>
+<th>Device</th>
+<th>Message</th>
+<th>Time</th>
+
+</tr>
+
+
+{% for a in alerts %}
+
+<tr class="table-danger">
+
+<td>{{ a[0] }}</td>
+<td>{{ a[1] }}</td>
+<td>{{ a[2] }}</td>
+<td>{{ a[3] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+{% endblock %}

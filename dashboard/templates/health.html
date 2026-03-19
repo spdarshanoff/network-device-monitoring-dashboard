@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Health Status</h2>
+
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Device</th>
+<th>Score</th>
+<th>Status</th>
+<th>Last Update</th>
+
+</tr>
+
+
+{% for h in data %}
+
+<tr>
+
+<td>{{ h[0] }}</td>
+
+<td>{{ h[1] }}</td>
+
+<td>
+
+{% if h[2] == "Healthy" %}
+<span class="badge bg-success">Healthy</span>
+
+{% elif h[2] == "Degrading" %}
+<span class="badge bg-warning">Degrading</span>
+
+{% else %}
+<span class="badge bg-danger">Critical</span>
+
+{% endif %}
+
+</td>
+
+<td>{{ h[3] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
